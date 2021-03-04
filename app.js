@@ -19,13 +19,23 @@ app.get("/", (req, res) => {
 	res.render("home", {startingContent: homeStartingContent});
 })
 
+app.get("/about", (req, res) => {
+	res.render("about", {abtContent: aboutContent});
+})
 
+app.get("/contact", (req, res) => {
+	res.render("contact", {cntContent: contactContent});
+})
 
+app.get("/compose", (req, res) => {
+	res.render("compose");
+})
 
-
-
-
-
+app.post("/compose", (req, res) => {
+	const composition = req.body.composeText;
+	console.log(composition);
+	res.redirect("/compose");
+})
 
 
 
