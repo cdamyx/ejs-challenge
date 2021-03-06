@@ -4,8 +4,11 @@
 <p> <%= startingContent %> </p>
 
 	<% posts.forEach(function(post) { %>
+		
+		<% const truncBody = post.body.substring(0, 100); %>
+
 		<h1><%=post.title%></h1>
-		<p><%=post.body%></p>
+		<p><%=truncBody + " ..."%> <a href="/posts/<%=post.title%>">Read More</a></p>
 	<% }); %>
 
 <%- include("partials/footer") -%>
